@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "348075711676",
+    "project_id": "teeka-courses",
+    "storage_bucket": "teeka-courses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348075711676:android:bdc7f95b41454a09c844b9",
+        "android_client_info": {
+          "package_name": "com.example.teeka_courses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348075711676-rf1q2hn7udvnlpgig513hi4rulik0pj2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teeka_courses",
+            "certificate_hash": "aa5d4263ce286a2682ca9343bae5477688f75654"
+          }
+        },
+        {
+          "client_id": "348075711676-4qig27hcu5529umsitt048339l52a7uf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIyu09EmAvzk7AOMhA5AvRzBd7piBbAN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348075711676-4qig27hcu5529umsitt048339l52a7uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
