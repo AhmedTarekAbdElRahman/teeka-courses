@@ -25,8 +25,7 @@ class HomeView extends StatelessWidget {
                 itemCount: state.userModel.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                   // leading: Image.network(
-                     //   'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg'),
+                   leading: Image.network(state.userModel[index].image!,),
                     title: Text(state.userModel[index].name!),
                     subtitle: Text(
                         'work at ${state.userModel[index].company!} and i have ${state.userModel[index].age!} years'),

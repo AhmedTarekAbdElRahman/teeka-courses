@@ -5,6 +5,7 @@ class UserModel {
   String? name;
   String? company;
   String? age;
+  String? image;
 
 
   UserModel({
@@ -12,6 +13,7 @@ class UserModel {
     this.name,
     this.company,
     this.age,
+    this.image,
 
   });
 
@@ -20,6 +22,8 @@ class UserModel {
     name = json.data()['name'];
     company = json.data()['company'];
     age = json.data()['age'];
+    image = json.data()['image'];
+
   }
 
   Map<String, dynamic> toMap() {
@@ -27,6 +31,7 @@ class UserModel {
       'name': name,
       'company': company,
       'age': age,
+      'image': image,
     };
   }
 }

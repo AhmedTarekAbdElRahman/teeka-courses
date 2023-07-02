@@ -5,6 +5,7 @@ import 'package:teeka_courses/view_model/add_cubit/add_user_cubit.dart';
 import 'package:teeka_courses/view_model/delete_user_cubit/delete_user_cubit.dart';
 import 'package:teeka_courses/view_model/get_users_cubit/get_user_cubit.dart';
 import 'firebase_services/firestore_service.dart';
+import 'firebase_services/storage_service.dart';
 import 'view_model/update_user_cubit/update_user_cubit.dart';
 import 'views/home_view.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           create: (context) => DeleteUserCubit(FirestoreService()),
         ),
         BlocProvider(
-          create: (context) => AddUserCubit(FirestoreService()),
+          create: (context) => AddUserCubit(FirestoreService(),StorageService()),
         ),
         BlocProvider(
           create: (context) => UpdateUserCubit(FirestoreService()),
