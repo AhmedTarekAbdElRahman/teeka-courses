@@ -41,7 +41,8 @@ dependencies:
   image_picker:
   firebase_storage:
   cached_network_image:
-
+  firebase_messaging:
+  dio:
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -31,7 +31,6 @@ class UserModel {
       'name': name,
       'company': company,
       'age': age,
-      'image': image,
     };
   }
 }

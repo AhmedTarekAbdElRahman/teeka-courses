@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
                 itemCount: state.userModel.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                   leading: Image.network(state.userModel[index].image!,),
+                   leading: Image.network(state.userModel[index].image ??'https://invisiblechildren.com/wp-content/uploads/2012/07/facebook-profile-picture-no-pic-avatar.jpg',),
                     title: Text(state.userModel[index].name!),
                     subtitle: Text(
                         'work at ${state.userModel[index].company!} and i have ${state.userModel[index].age!} years'),

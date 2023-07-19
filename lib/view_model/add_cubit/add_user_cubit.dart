@@ -6,13 +6,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:teeka_courses/firebase_services/firestore_service.dart';
 import 'package:teeka_courses/firebase_services/storage_service.dart';
 import 'package:teeka_courses/model/user_model.dart';
-
+import 'package:teeka_courses/api_service/api_service.dart';
 part 'add_user_state.dart';
 
 class AddUserCubit extends Cubit<AddUserState> {
-  AddUserCubit(this.firestoreService, this.storageService)
+
+  AddUserCubit(this.firestoreService, this.storageService,this.apiService)
       : super(AddUserInitial());
   FirestoreService firestoreService;
+  ApiService apiService;
+
   StorageService storageService;
   var picker = ImagePicker();
   File? pickedImage;
@@ -26,7 +29,6 @@ class AddUserCubit extends Cubit<AddUserState> {
       emit(AddImagePickedFailure());
     }
   }
-
 
   Future<void> uploadImage({
     required String name,
@@ -66,8 +68,18 @@ class AddUserCubit extends Cubit<AddUserState> {
             model:
                 UserModel(name: name, age: age, company: company, image: image)
                     .toMap())
-        .then((value) => emit(AddUserSuccess()))
-        .catchError((err) {
+        .then((value)async {
+      await apiService.postData(data: {
+        'to': '/topics/all',
+        'notification': {
+          "title": 'test',
+          "body": "test",
+          "sound": "default"
+        },
+        'data': 'test',
+      });
+      emit(AddUserSuccess());
+    }).catchError((err) {
       print(err.toString());
     });
   }
