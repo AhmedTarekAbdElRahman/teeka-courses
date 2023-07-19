@@ -21,6 +21,8 @@ void main() async {
   await Firebase.initializeApp();
   // var x = await FirebaseMessaging.instance.getToken();
   // print(x);
+  await FirebaseMessaging.instance.requestPermission();
+
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     if (message.notification != null) {
       print('object');
@@ -28,9 +30,7 @@ void main() async {
   });
 
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  await FirebaseMessaging.instance.subscribeToTopic('amr'); //individual
   await FirebaseMessaging.instance.subscribeToTopic('all');//all users
-  await FirebaseMessaging.instance.subscribeToTopic('nurses');//group
 
   runApp(const MyApp());
 }
